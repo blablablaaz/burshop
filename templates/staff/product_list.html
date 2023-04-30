@@ -6,17 +6,17 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <h2 class="text-black">Staff Portal - Products</h2>
-                <a href="{% url 'staff:product-create' %}">Create a product</a>
+                <h2 class="text-black">Сотруднические продукты</h2>
+                <a href="{% url 'staff:product-create' %}">Добавить продукт</a>
                 <div class="card">
                     <div class="card-body">
                         <div class="site-blocks-table">
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>Title.</th>
-                                        <th>Price</th>
-                                        <th>Actions</th>
+                                        <th>тайтл</th>
+                                        <th>Цена</th>
+                                        <th>действие</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -37,7 +37,7 @@
                                     </tr>
                                     {% empty %}
                                     <tr>
-                                        <td colspan="3">You don't have any products</td>
+                                        <td colspan="3">У вас нет товаров</td>
                                     </tr>
                                     {% endfor %}
                                 </tbody>

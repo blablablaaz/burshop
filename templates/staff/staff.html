@@ -6,26 +6,26 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <h2 class="text-black">Staff Portal</h2>
+                <h2 class="text-black">Портал сотрудников</h2>
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">
                             {{ request.user.email }}
                         </h5>
                         <hr />
-                        <a href="{% url 'staff:product-list' %}">Products</a>
+                        <a href="{% url 'staff:product-list' %}">Товары</a>
                         <hr />
 
-                        <h5 class="card-title">Recent orders</h5>
+                        <h5 class="card-title">Недавние заказы</h5>
                         <div class="site-blocks-table">
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>Reference No.</th>
-                                        <th>Date</th>
-                                        <th>User</th>
-                                        <th>Amount</th>
-                                        <th>Payment Status</th>
+                                        <th>Номер ссылки</th>
+                                        <th>дата</th>
+                                        <th>Юзер</th>
+                                        <th>Количество</th>
+                                        <th>Статус оплаты</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -39,7 +39,7 @@
                                     </tr>
                                     {% empty %}
                                     <tr>
-                                        <td colspan="4">You haven't made any orders</td>
+                                        <td colspan="4">У вас нет заказов</td>
                                     </tr>
                                     {% endfor %}
                                 </tbody>
