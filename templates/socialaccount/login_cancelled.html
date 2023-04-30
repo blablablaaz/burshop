@@ -1,0 +1,15 @@
+{% extends "socialaccount/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "вход отменен" %}{% endblock %}
+
+{% block content %}
+
+<h1>{% trans "вход отменен" %}</h1>
+
+{% url 'account_login' as login_url %}
+
+<p>{% blocktrans %}Вы вышли из аккаунта <a href="{{login_url}}">войти</a>.{% endblocktrans %}</p>
+
+{% endblock %}

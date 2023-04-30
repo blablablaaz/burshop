@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="site-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <h2 class="text-black">Ваш профиль</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            {{ request.user.email }}
+                            <a href="{% url 'account_logout' %}">
+                                <small class="float-right">Выйти</small></a>
+                        </h5>
+                        <hr />
+                        <h5 class="card-title">Ваши заказы</h5>
+                        <div class="site-blocks-table">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Референс</th>
+                                        <th>Дата</th>
+                                        <th>Количество</th>
+                                        <th>Статус оплаты</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for order in orders %}
+                                    <tr>
+                                        <td><a href="{% url 'cart:order-detail' order.pk %}">#{{ order.reference_number }}</a></td>
+                                        <td>{{ order.ordered_date }}</td>
+                                        <td>${{ order.get_total }}</td>
+                                        <td>{% if order.ordered %}Paid{% else %}Not paid{% endif %}</td>
+                                    </tr>
+                                    {% empty %}
+                                    <tr>
+                                        <td colspan="4">У вас нет заказов</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
